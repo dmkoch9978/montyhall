@@ -79,6 +79,8 @@ select_door <- function( )
 #'    placement in the game array that the opened door object was stored.
 #'
 #' @examples
+#'game <- create_game()
+#'a.pick <- select_door()
 #'open_goat_door(game, a.pick)
 #'
 #' @export
@@ -118,6 +120,10 @@ open_goat_door <- function( game, a.pick )
 #'    position of the participant's final choice.
 #'    
 #' @examples
+#'game <- create_game()
+#'a.pick <- select_door()
+#'opened.door <- open_goat_door(game, a.pick)
+#'
 #'change_door( TRUE, opened.door, a.pick ) 
 #'change_door( FALSE, opened.door, a.pick )
 #'change_door( opened.door, a.pick )
@@ -154,6 +160,10 @@ change_door <- function( stay=T, opened.door, a.pick )
 #' @return The return is the text stored in game[final.pick].
 #'    
 #' @examples
+#'game <- create_game()
+#'a.pick <- select_door()
+#'opened.door <- open_goat_door(game, a.pick)
+#'final.pick <- change_door <- function( stay=T, opened.door, a.pick )
 #'determine_winner( final.pick, game )
 #'   
 #' @export
@@ -226,6 +236,7 @@ play_game <- function( )
 #' @examples
 #'play_n_games()
 #'play_n_games(200)
+#'n <- 100
 #'play_n_games(n)
 #'   
 #' @export
