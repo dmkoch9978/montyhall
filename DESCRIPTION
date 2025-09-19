@@ -5,10 +5,10 @@ Authors@R:
     person("Dani", "Koch", , "dmkoch@asu.eu", role = c("aut", "cre"))
 Description: This package takes the user through the classic game show where the participant is 
 presented with 3 doors and behind one is a new car. Each selection is chosen randomly, with no 
-user participation. The point of this package is to test whether or not the Monty Hall Theory is 
-correct. The Monty Hall Theory states that the participant is better off switching their choice 
-rather than remaining with their original choice when presented with the opportunity after 
-seeing one of the doors that contains the "goat". To achieve this, the package includes a 
+user participation. The point of this package is to test whether or not the Monty Hall Theory 
+is correct. The Monty Hall Theory states that the participant is better off switching their 
+choice rather than remaining with their original choice when presented with the opportunity 
+after seeing one of the doors that contains the "goat". To achieve this, the package includes a 
 function that loops through the game n times and determines the probability of winning the game 
 when the participant changes or remains with their choice.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
