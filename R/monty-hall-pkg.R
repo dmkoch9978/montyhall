@@ -84,7 +84,7 @@ select_door <- function( )
 #' @examples
 #' 
 #' game <- create_game()
-#' a.pick ,_ select_door()
+#' a.pick <- select_door()
 #' open_goat_door(game, a.pick)
 #'
 #' @export
@@ -126,7 +126,7 @@ open_goat_door <- function( game, a.pick )
 #' @examples
 #' 
 #' game <- create_game()
-#' a.pick ,_ select_door()
+#' a.pick <- select_door()
 #' opened.door <- open_goat_door(game, a.pick)
 #' change_door( TRUE, opened.door, a.pick ) 
 #' change_door( FALSE, opened.door, a.pick )
@@ -167,7 +167,7 @@ change_door <- function( stay=T, opened.door, a.pick )
 #' @examples
 #' 
 #' game <- create_game()
-#' a.pick ,_ select_door()
+#' a.pick <- select_door()
 #' opened.door <- open_goat_door(game, a.pick)
 #' final.pick <- change_door( TRUE, opened.door, a.pick ) 
 #' determine_winner( final.pick, game )
