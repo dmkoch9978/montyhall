@@ -24,7 +24,7 @@ game array.
 \examples{
 
 game <- create_game()
-a.pick ,_ select_door()
+a.pick <- select_door()
 opened.door <- open_goat_door(game, a.pick)
 final.pick <- change_door( TRUE, opened.door, a.pick ) 
 determine_winner( final.pick, game )
