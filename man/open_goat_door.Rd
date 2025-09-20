@@ -24,6 +24,9 @@ Randomly opens a door provided that the
 door doesn't hold the car or was initially selected in select_door().
 }
 \examples{
+
+game <- create_game()
+a.pick ,_ select_door()
 open_goat_door(game, a.pick)
 
 }

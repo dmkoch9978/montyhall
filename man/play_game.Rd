@@ -21,6 +21,7 @@ This function plays the entire game from start to finish.
 This function runs all functions needed to play the Monty Hall game.
 }
 \examples{
+
 play_game()
     
 }

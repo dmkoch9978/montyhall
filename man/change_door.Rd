@@ -25,7 +25,12 @@ return is the only remaining door, if true, the return is the initial
 chosen door.
 }
 \examples{
+
+game <- create_game()
+a.pick ,_ select_door()
+opened.door <- open_goat_door(game, a.pick)
 change_door( TRUE, opened.door, a.pick ) 
 change_door( FALSE, opened.door, a.pick )
-change_door( opened.door, a.pick )
+change_door( opened.door = opened.door, a.pick = a.pick )
+
 }

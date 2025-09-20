@@ -1,5 +1,5 @@
 #' @title
-#'Create a new Monty Hall Problem game.
+#'   Create a new Monty Hall Problem game.
 #'
 #' @description
 #'`create_game()` generates a new game that consists of two doors 
@@ -23,6 +23,7 @@
 #'   indicating the positions of goats and the car.
 #'
 #' @examples
+#' 
 #'create_game()
 #'
 #' @export
@@ -36,6 +37,7 @@ create_game <- function( )
 #'Monty Python Door Selection
 #'
 #' @description
+#' 
 #'`select_door()` randomly generates a door selection.
 #'
 #' @details
@@ -48,6 +50,7 @@ create_game <- function( )
 #'    door placement within the game array
 #'
 #' @examples
+#' 
 #'select_door()
 #'
 #' @export
@@ -79,9 +82,10 @@ select_door <- function( )
 #'    placement in the game array that the opened door object was stored.
 #'
 #' @examples
-#'game <- create_game()
-#'a.pick <- select_door()
-#'open_goat_door(game, a.pick)
+#' 
+#' game <- create_game()
+#' a.pick ,_ select_door()
+#' open_goat_door(game, a.pick)
 #'
 #' @export
 open_goat_door <- function( game, a.pick )
@@ -102,16 +106,16 @@ open_goat_door <- function( game, a.pick )
 }
 
 #' @title
-#'Monty Hall Door Switch Opportunity
+#' Monty Hall Door Switch Opportunity
 #' @description
-#'This function represents the point in the show where the game show host
-#'offers the participant an opportunity to change their choice to the one 
-#'remaining door.
+#' This function represents the point in the show where the game show host
+#' offers the participant an opportunity to change their choice to the one 
+#' remaining door.
 #'  
 #' @details
-#'It gives the user a choice to switch doors.  If stay is false, the
-#'return is the only remaining door, if true, the return is the initial
-#'chosen door.
+#' It gives the user a choice to switch doors.  If stay is false, the
+#' return is the only remaining door, if true, the return is the initial
+#' chosen door.
 #'    
 #' @param ... The default stay value is true. It also requires the return
 #'    from open_goat_door(game, a.pick) and select_door().
@@ -120,13 +124,14 @@ open_goat_door <- function( game, a.pick )
 #'    position of the participant's final choice.
 #'    
 #' @examples
-#'game <- create_game()
-#'a.pick <- select_door()
-#'opened.door <- open_goat_door(game, a.pick)
-#'
-#'change_door( TRUE, opened.door, a.pick ) 
-#'change_door( FALSE, opened.door, a.pick )
-#'change_door( opened.door, a.pick )
+#' 
+#' game <- create_game()
+#' a.pick ,_ select_door()
+#' opened.door <- open_goat_door(game, a.pick)
+#' change_door( TRUE, opened.door, a.pick ) 
+#' change_door( FALSE, opened.door, a.pick )
+#' change_door( opened.door = opened.door, a.pick = a.pick )
+#' 
 #' @export
 change_door <- function( stay=T, opened.door, a.pick )
 {
@@ -145,26 +150,27 @@ change_door <- function( stay=T, opened.door, a.pick )
 }
 
 #' @title
-#'Monty Hall Prize Reveal
+#' Monty Hall Prize Reveal
 #' @description
-#'This function represents the point in the game where the host reveals
-#'what the participant has won.
-#'    
+#' This function represents the point in the game where the host reveals
+#' what the participant has won.
+#' 
 #' @details
-#'This function reveals what is stored in the final.pick position of the
-#'game array.
-#'    
+#' This function reveals what is stored in the final.pick position of the
+#' game array.
+#' 
 #' @param ... It requires the game array from create_game() and the final.pick
 #'    from change_door(stay = T, opened.door, a.pick). 
 #'    
 #' @return The return is the text stored in game[final.pick].
 #'    
 #' @examples
-#'game <- create_game()
-#'a.pick <- select_door()
-#'opened.door <- open_goat_door(game, a.pick)
-#'final.pick <- change_door <- function( stay=T, opened.door, a.pick )
-#'determine_winner( final.pick, game )
+#' 
+#' game <- create_game()
+#' a.pick ,_ select_door()
+#' opened.door <- open_goat_door(game, a.pick)
+#' final.pick <- change_door( TRUE, opened.door, a.pick ) 
+#' determine_winner( final.pick, game )
 #'   
 #' @export
 determine_winner <- function( final.pick, game )
@@ -183,17 +189,18 @@ determine_winner <- function( final.pick, game )
 #'Monty Hall Master Function
 #' @description
 #'This function plays the entire game from start to finish.
-#'    
+#' 
 #' @details
 #'This function runs all functions needed to play the Monty Hall game.
-#'    
+#' 
 #' @param ... This function does not require any inputs.
-#'    
+#' 
 #' @return This function returns a 2 object array containing the strategy 
 #'    (whether the participant switched during that run or stayed) and the outcome
 #'    (what prize the participant won).
 #'    
 #' @examples
+#' 
 #'play_game()
 #'     
 #' @export
@@ -217,34 +224,33 @@ play_game <- function( )
 }
 
 #' @title
-#'Monty Hall Game Loop
+#' Monty Hall Game Loop
 #' @description
-#'This function loops through the game n amount of times in order to
-#'determine the probability of winning or loosing based on whether or not
-#'the participant stays with their original choice.
-#'    
+#' This function loops through the game n amount of times in order to
+#' determine the probability of winning or loosing based on whether or not
+#' the participant stays with their original choice.
+#' 
 #' @details
-#'For every iteration of n, the function calls play_game() and stores the
-#'results in an array using rbind. The function then displays the results
-#'in a 2x2 table.
-#'    
+#' For every iteration of n, the function calls play_game() and stores the
+#' results in an array using rbind. The function then displays the results
+#' in a 2x2 table.
+#' 
 #' @param ... The default value for n is 100, however, you can call the function with 
 #'    your own value.
 #'    
 #' @return It returns the results data frame.
 #'    
 #' @examples
+#' 
 #'play_n_games()
 #'play_n_games(200)
-#'n <- 100
-#'play_n_games(n)
-#'   
+#'
 #' @export
 play_n_games <- function( n=100 )
 {
   
   library( dplyr )
-  results.list <- list()   # collector
+  results.list <- list()# collector
   loop.count <- 1
 
   for( i in 1:n )  # iterator

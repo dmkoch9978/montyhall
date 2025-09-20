@@ -21,6 +21,7 @@ This function replicates the participant of the game show making their
 initial door selection.
 }
 \examples{
+
 select_door()
 
 }

@@ -24,8 +24,8 @@ results in an array using rbind. The function then displays the results
 in a 2x2 table.
 }
 \examples{
+
 play_n_games()
 play_n_games(200)
-play_n_games(n)
-  
+
 }
